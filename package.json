@@ -37,6 +37,7 @@
     "check-contrast": "node ./utils/check-contrast.js",
     "clean": "gulp clean-assets",
     "crawl": "node config/crawl.js",
+    "dummy": "ls -al",
     "federalist": "npm install --only=dev && gulp build",
     "postinstall": "bundle",
     "lint": "gulp eslint scss-lint",
