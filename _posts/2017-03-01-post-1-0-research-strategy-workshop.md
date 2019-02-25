@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Post 1.0 Research Strategy Workshop
+title: Post 1.0 Research Strategy Worrkshop
 tags:
 - updates
 - research
