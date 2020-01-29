@@ -39,6 +39,7 @@ Components:
   - text: Grid
     href: /utilities/layout-grid/
   - href: /components/header/
+  - href: /components/hero/
   - href: /components/icons/
   - href: /components/search/
   - href: /components/sidenav/
