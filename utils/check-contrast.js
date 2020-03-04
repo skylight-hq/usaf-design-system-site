@@ -87,17 +87,12 @@ class ContrastResult {
   }
 
   isCompliant() {
-    let result = true;
+    let numRegex = /\d+/g;
 
-    if (this.base - this.contrast >= 50) {
-      if (!isAACompliant(this)) {
-        result = false;
-      }
-    } else if (!isAALargeCompliant(this)) {
-      result = false;
-    }
+    let cBase = parseInt((this.base).match(numRegex));
+    let cContrast = parseInt((this.contrast).match(numRegex));
 
-    return result;
+    return (cBase - cContrast >= 50) && (isAACompliant(this) || isAALargeCompliant(this));
   }
 }
 
