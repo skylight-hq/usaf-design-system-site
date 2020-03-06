@@ -87,12 +87,35 @@ class ContrastResult {
   }
 
   isCompliant() {
+    let result = true;
     let numRegex = /\d+/g;
 
     let cBase = parseInt((this.base).match(numRegex));
     let cContrast = parseInt((this.contrast).match(numRegex));
+    let colorDifference = Math.abs(cBase - cContrast);
 
-    return (cBase - cContrast >= 50) && (isAACompliant(this) || isAALargeCompliant(this));
+    if (colorDifference >= 40) {
+      if (isAACompliant(this)) {
+        result = false;
+      }
+    } else {
+      if (!isAALargeCompliant(this)) {
+        result = false;
+      }
+    }
+
+    // let results = {
+    //   base: this.base,
+    //   contrast: this.contrast,
+    //   ratio: this.ratio,
+    //   aa: isAACompliant(this),
+    //   aaLarge: isAALargeCompliant(this)
+    // }
+
+    // console.log(results);
+
+
+    return result;
   }
 }
 
@@ -293,9 +316,10 @@ if (args[SWITCHES.CONTRAST_ALL]) {
       const familyB = COLORS[familyNames[j]];
 
       totalErrors = totalErrors.concat(contrastForFamily(familyA, familyB));
+      console.log(contrastForFamily(familyA, familyB));
     }
   }
-  console.log(totalErrors);
+  // console.log(totalErrors);
 } else if (args[SWITCHES.APPLY_LUM]) {
   const family = COLORS[args[SWITCHES.FAMILY]];
 
@@ -306,6 +330,8 @@ if (args[SWITCHES.CONTRAST_ALL]) {
 
   console.log(applyLuminance(family));
 } else if (args[SWITCHES.LUMINANCE]) {
+  console.log("wtf");
+
   const family = COLORS[args[SWITCHES.FAMILY]];
 
   if (!family) {
@@ -320,7 +346,6 @@ if (args[SWITCHES.CONTRAST_ALL]) {
   if (!family) {
     Object.keys(COLORS).forEach((familyName) => {
       const colorFamily = COLORS[familyName];
-
       reportContrastErrors(colorFamily);
     });
   } else {
