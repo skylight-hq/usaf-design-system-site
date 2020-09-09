@@ -658,7 +658,7 @@ body {
     }
 
     img {
-      width: units(4);
+      height: units(4);
     }
 
     a {
@@ -2434,8 +2434,8 @@ h6 + div:not(.usa-accordion__content) {
 
     .usa-logo__text {
       &::before {
-        background-image: url("../img/uswds-logo/4c-lg-on-black.png");
-        background-image: url("../img/uswds-logo/4c-lg-on-black.svg");
+        // background-image: url("../img/uswds-logo/4c-lg-on-black.png");
+        background-image: url("../img/usaf-logo.svg");
       }
     }
   }

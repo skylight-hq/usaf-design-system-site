@@ -4,10 +4,10 @@ redirect_from:
   - /getting-started/
 
 layout: landing
-title: "USWDS: The United States Web Design System"
+title: "The U.S. Air Force Design System"
 class: home
 hero:
-  callout: A design system for the federal government
+  callout: A design system for the U.S. Air Force
   content: Design and build fast, accessible, mobile-friendly government websites backed by user research.
 graphic_list:
   list_item:
@@ -45,7 +45,7 @@ graphic_list:
         url: page-templates
 ---
 
-<section class="usa-section bg-base-lightest showcase" aria-label="Sites using USWDS">
+<!-- <section class="usa-section bg-base-lightest showcase" aria-label="Sites using USWDS">
   <div class="grid-container">
     <h2 class="font-lang-xl margin-y-0 line-height-serif-2">Showcase</h2>
     <div class="grid-row grid-gap tablet:margin-top-3">
@@ -80,4 +80,4 @@ graphic_list:
       </div>
     </div>
   </div>
-</section>
+</section> -->
