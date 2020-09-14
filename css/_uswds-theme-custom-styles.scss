@@ -98,6 +98,10 @@ body {
   @include typeset("lang");
 }
 
+.bg-primary-darkest {
+  @include u-bg("blue-warm-90");
+}
+
 // ========================================
 // 2. Site layout
 // ----------------------------------------
@@ -169,6 +173,10 @@ body {
 }
 
 .navbar__search {
+  &.usa-search--small [type=submit] {
+    background-image: url(../img/search-primary.svg), linear-gradient(transparent, transparent);
+  }
+
   .usa-input {
     @include at-media("desktop") {
       background-color: color("blue-warm-90");
@@ -179,6 +187,7 @@ body {
 
   .usa-button {
     @include at-media("desktop") {
+      background-color: color("white");
       height: 39px;
     }
   }
@@ -266,7 +275,8 @@ body {
   }
 
   a {
-    color: color($site-ink);
+    // color: color($site-ink);
+    color: color("white");
   }
 
   .usa-logo__text {
@@ -741,7 +751,6 @@ body {
 .footer-section-bottom {
   padding-top: units(2);
   padding-bottom: units(2);
-  background-color: color($site-primary-darker);
 
   p {
     color: color("white");
@@ -2296,13 +2305,13 @@ h6 + div:not(.usa-accordion__content) {
 }
 
 .site-header {
-  .usa-button {
-    background-color: color($site-primary-vivid);
+  // .usa-button {
+  //   background-color: color($site-primary-vivid);
 
-    &:hover {
-      background-color: color("blue-warm-60v");
-    }
-  }
+  //   &:hover {
+  //     background-color: color("blue-warm-60v");
+  //   }
+  // }
 
   .usa-button--outline-inverse {
     background-color: transparent;
@@ -2435,7 +2444,7 @@ h6 + div:not(.usa-accordion__content) {
     .usa-logo__text {
       &::before {
         // background-image: url("../img/uswds-logo/4c-lg-on-black.png");
-        background-image: url("../img/usaf-logo.svg");
+        background-image: url("../img/usaf-logo-light.svg");
       }
     }
   }
@@ -3225,10 +3234,10 @@ body {
 }
 
 .site-hero {
-  @include u-bg("base-lightest");
+  @include u-bg("blue-warm-90");
   @include u-padding-bottom(4);
   @include u-padding-x(0);
-  background-image: url("../img/introducing-uswds-2-0/feature-image.png");
+  // background-image: url("../img/introducing-uswds-2-0/feature-image.png");
   background-repeat: no-repeat;
   background-position: 0 units(2);
   background-size: 100% auto;
@@ -3237,7 +3246,7 @@ body {
   @include at-media("tablet") {
     @include u-padding-bottom(8);
     @include u-padding-top(6);
-    background-image: url("../img/introducing-uswds-2-0/feature-image-homepage.svg");
+    // background-image: url("../img/introducing-uswds-2-0/feature-image-homepage.svg");
     background-repeat: no-repeat;
     background-position: left calc(#{units("mobile-lg")} + #{units(2)}) top
       units("105");
@@ -3279,7 +3288,8 @@ body {
     width: units(3);
 
     path {
-      fill: white;
+      // fill: color($site-ink);
+      fill: color("white");
     }
   }
 
@@ -3305,7 +3315,8 @@ body {
         width: units(4);
 
         path {
-          fill: color("white-transparent-70");
+          // fill: color($site-ink);
+          fill: color("white");
         }
       }
 
@@ -3315,7 +3326,7 @@ body {
 
         .logo {
           path {
-            fill: color("white");
+            fill: color($site-primary-darker);
           }
         }
       }
@@ -3333,9 +3344,12 @@ body {
     bottom: units(-2px);
   }
 
-  .site-header .buttons .site-button-standards {
-    box-shadow: inset 0 0 0 2px color("gold-20v");
-    color: color("gold-20v");
+  .site-header .buttons {
+    .site-button-standards,
+    .site-button-download {
+      // box-shadow: inset 0 0 0 2px color($site-ink);
+      // color: color($site-ink);
+    }
   }
 }
 
