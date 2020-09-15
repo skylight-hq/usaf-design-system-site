@@ -3317,7 +3317,7 @@ body {
 
         path {
           // fill: color($site-ink);
-          fill: color("white");
+          fill: color("gray-10");
         }
       }
 
@@ -3327,7 +3327,7 @@ body {
 
         .logo {
           path {
-            fill: color($site-primary-darker);
+            fill: color("white");
           }
         }
       }
