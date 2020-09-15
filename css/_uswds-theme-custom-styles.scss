@@ -179,7 +179,8 @@ body {
 
   .usa-input {
     @include at-media("desktop") {
-      background-color: color("blue-warm-90");
+      // background-color: color("blue-warm-90");
+      background-color: rgba(22,23,31,0.5);
       color: color("white");
       height: 39px;
     }
